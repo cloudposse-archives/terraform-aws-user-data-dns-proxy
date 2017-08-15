@@ -7,6 +7,6 @@ variable "name" {}
 variable "split_zone" {}
 
 variable "split_zone_ips" {
-  type = list
+  type = "list"
   default = []
 }
