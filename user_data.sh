@@ -74,3 +74,6 @@ RESOLVCONF=no
 OPTIONS="-u bind -4"
 __EOF__
 chmod 644 /etc/default/bind9
+
+
+service bind9 restart
