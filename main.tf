@@ -14,6 +14,6 @@ data "template_file" "default" {
     name            = "${var.name}"
     stage           = "${var.stage}"
     split_zone      = "${var.split_zone}"
-    split_zone_ips  = "${var.split_zone_ips}"
+    split_zone_ips  = ["${var.split_zone_ips}"]
   }
 }
