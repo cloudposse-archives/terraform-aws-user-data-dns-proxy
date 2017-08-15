@@ -26,7 +26,7 @@ zone "localhost" {
 zone "${split_zone}" {
         type forward;
         forward first;
-        forwarders  { ${split_zone_ips} };
+        forwarders  { ${split_zone_ips}; };
 };
 __EOF__
 chmod 644 /etc/bind/named.conf.default-zones
@@ -52,7 +52,7 @@ options {
         forwarders {
                 8.8.8.8;
                 8.8.4.4;
-                ${split_zone_ips}
+                ${split_zone_ips};
         };
 };
 
