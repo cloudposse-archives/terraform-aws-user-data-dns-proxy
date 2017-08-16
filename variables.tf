@@ -10,3 +10,5 @@ variable "split_zone_ips" {
   type = "list"
   default = []
 }
+
+variable "region" {}

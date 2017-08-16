@@ -15,5 +15,6 @@ data "template_file" "default" {
     stage           = "${var.stage}"
     split_zone      = "${var.split_zone}"
     split_zone_ips  = "${join(";", var.split_zone_ips)}"
+    region          = "${var.region}"
   }
 }

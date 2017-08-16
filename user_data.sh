@@ -28,6 +28,12 @@ zone "${split_zone}" {
         forward first;
         forwarders  { ${split_zone_ips}; };
 };
+
+zone "${region}.amazonaws.com" {
+        type forward;
+        forward first;
+        forwarders  { 10.0.0.2; };
+};
 __EOF__
 chmod 644 /etc/bind/named.conf.default-zones
 
@@ -52,6 +58,7 @@ options {
         forwarders {
                 8.8.8.8;
                 8.8.4.4;
+                10.0.0.2;
                 ${split_zone_ips};
         };
 };
