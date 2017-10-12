@@ -1,20 +1,13 @@
-# Define composite variables for resources
-module "label" {
-  source    = "git::https://github.com/cloudposse/tf_label.git?ref=tags/0.1.0"
-  namespace = "${var.namespace}"
-  name      = "${var.name}-dns-proxy"
-  stage     = "${var.stage}"
+locals {
+  template_path = "${path.module}/templates/${var.os}.sh"
 }
 
 data "template_file" "default" {
-  template = "${file("${path.module}/user_data.sh")}"
+  template = "${file(local.template_path)}"
 
   vars {
-    namespace       = "${var.namespace}"
-    name            = "${var.name}"
-    stage           = "${var.stage}"
-    split_zone      = "${var.split_zone}"
-    split_zone_ips  = "${join(";", var.split_zone_ips)}"
-    region          = "${var.region}"
+    domain = "${var.domain}"
+    ip     = "${var.ip}"
+    region = "${var.region}"
   }
 }

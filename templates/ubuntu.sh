@@ -23,10 +23,10 @@ zone "localhost" {
         file "/etc/bind/db.local";
 };
 
-zone "${split_zone}" {
+zone "${domain}" {
         type forward;
         forward first;
-        forwarders  { ${split_zone_ips}; };
+        forwarders  { ${ip}; };
 };
 
 zone "${region}.amazonaws.com" {
@@ -52,14 +52,14 @@ options {
 
         recursion yes;                 # enables resursive queries
         allow-recursion { trusted; };  # allows recursive queries from "trusted" clients
-        listen-on { any; };   # ns1 private IP address - listen on private network only
+        listen-on { any; };            # ns1 private IP address - listen on private network only
         allow-transfer { none; };      # disable zone transfers by default
 
         forwarders {
                 8.8.8.8;
                 8.8.4.4;
                 10.0.0.2;
-                ${split_zone_ips};
+                ${ip};
         };
 };
 
