@@ -1,1 +1,1 @@
-# tf_user_data_dns_proxy
+# terraform-aws-user-data-dns-proxy
