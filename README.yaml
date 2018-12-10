@@ -30,9 +30,6 @@ github_repo: cloudposse/terraform-aws-user-data-dns-proxy
 
 # Badges to display
 badges:
-  - name: "Build Status"
-    image: "https://travis-ci.org/cloudposse/terraform-aws-user-data-dns-proxy.svg?branch=master"
-    url: "https://travis-ci.org/cloudposse/terraform-aws-user-data-dns-proxy"
   - name: "Latest Release"
     image: "https://img.shields.io/github/release/cloudposse/terraform-aws-user-data-dns-proxy.svg"
     url: "https://github.com/cloudposse/terraform-aws-user-data-dns-proxy/releases/latest"
